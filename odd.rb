@@ -39,24 +39,17 @@
 # Elements of input arrays can be modified.
 
 array = [333,333,333,333,333,5,2,2,2,2,2]
-array2 = [5,8975,8975,8975,8975,8975,39844,39844,39844,39844,39844]
+array2 = [8975,8975,8975,8975,8975,39844,39844,39844,39844,39844,8975,8975,345324234234524524524234234,8975,8975,8975,39844,39844,39844,39844,39844,8975,8975,8975,8975,8975,39844,39844,39844,39844,39844]
 
 
 def solution(a)
-  # write your code in Ruby 2.2
-  first_check = a[0]
-  array_length = a.length
-  a.delete(a[0]) 
-  if array_length-1 == a.length
-    return first_check
-  else
-    second_check = a[0] 
-    a.delete(a[0])
-  end
-  if a.length == 1
-    return a[0]
-  else
-    return second_check
+  answer = 0
+  3.times do 
+    if a.count(a[0]) == 1
+      return a[0]
+    else
+      a.delete(a[0])
+    end
   end
 end
 p solution(array)
